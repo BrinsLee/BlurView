@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.brins.simple.MainActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.brins.blurlib.BlurView
+        android:id="@+id/topBlurView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:elevation="16dp"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded"
+        app:blurViewTopLeftRadius="100dp"
+        app:blurViewTopRightRadius="100dp"
+        app:blurViewBottomRightRadius="100dp"
+        app:blurViewBottomLeftRadius="100dp"
+        app:blurViewOverlayColor="@color/colorOverlay"
+        tools:targetApi="lollipop"/>
+
+
+    <com.brins.blurlib.BlurView
+        android:id="@+id/centerBlurView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="16dp"
+        android:layout_margin="8dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded"
+        app:blurViewBottomLeftRadius="8dp"
+        app:blurViewOverlayColor="@color/colorPrimaryDark"
+        tools:targetApi="lollipop">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@string/radius"/>
+
+            <SeekBar
+                android:id="@+id/radiusSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"/>
+
+        </LinearLayout>
+    </com.brins.blurlib.BlurView>
+
+    <com.brins.blurlib.BlurView
+        android:id="@+id/bottomBlurView"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content"
+        app:blurViewOverlayColor="@color/colorPrimary60"
+        tools:targetApi="lollipop">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_tab_height"
+            android:background="@android:color/transparent"/>
+
+    </com.brins.blurlib.BlurView>
+
+</FrameLayout>

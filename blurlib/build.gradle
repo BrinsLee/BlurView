@@ -1,0 +1,39 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+//    id 'com.kezong.fat-aar'
+}
+
+android {
+    namespace 'com.brins.blurlib'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 21
+
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+}
+
+dependencies {
+    api (name: 'renderscript-toolkit-release', ext: 'aar')
+    implementation 'androidx.core:core-ktx:1.8.0'
+//    implementation platform('org.jetbrains.kotlin:kotlin-bom:1.8.0')
+//    implementation 'androidx.appcompat:appcompat:1.4.2'
+//    implementation 'com.google.android.material:material:1.6.1'
+}

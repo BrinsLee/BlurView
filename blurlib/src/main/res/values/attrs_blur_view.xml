@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BlurView">
+        <attr name="blurViewRadius" format="integer"/>
+        <attr name="blurViewOverlayColor" format="color|reference"/>
+        <attr name="blurViewScaleFactor" format="float"/>
+        <attr name="blurViewTopLeftRadius" format="dimension"/>
+        <attr name="blurViewTopRightRadius" format="dimension"/>
+        <attr name="blurViewBottomLeftRadius" format="dimension"/>
+        <attr name="blurViewBottomRightRadius" format="dimension"/>
+    </declare-styleable>
+</resources>
